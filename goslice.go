@@ -69,3 +69,12 @@ func Substract(slice []string, subslice []string) []string {
 	}
 	return ret
 }
+
+func Find(slice []string, ele string) int {
+	for i, e := range slice {
+		if e == ele {
+			return i
+		}
+	}
+	return -1
+}

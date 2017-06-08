@@ -26,3 +26,15 @@ func TestSubstract(t *testing.T) {
 		t.Fatal("wrong substract")
 	}
 }
+
+func TestFind(t *testing.T) {
+	i := Find([]string{"1", "2", "3"}, "2")
+	if i != 1 {
+		t.Fatal("wrong found")
+	}
+
+	i := Find([]string{"1", "2", "3"}, "4")
+	if i != -1 {
+		t.Fatal("wrong found")
+	}
+}
