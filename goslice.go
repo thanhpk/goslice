@@ -50,3 +50,22 @@ func Merge(s1 []string, s2 []string) []string {
 	}
 	return ret
 }
+
+
+// Substract return all elements which is in slice but not in subslice. O(n^2)
+func Substract(slice []string, subslice []string) []string {
+	ret := make([]string, 0)
+	for _, s := range slice {
+		found := false
+		for _, subs := range subslice {
+			if subs == s {
+				found = true
+				break
+			}
+		}
+		if !found {
+			ret = append(ret, s)
+		}
+	}
+	return ret
+}

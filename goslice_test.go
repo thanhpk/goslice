@@ -6,11 +6,23 @@ import (
 )
 
 func TestEquals(t *testing.T) {
-	if !Equals([]string{"1", "2"}, []string{"2", "1"}) {
+	if !Equal([]string{"1", "2"}, []string{"2", "1"}) {
 		t.Fatal("should be true")
 	}
 
-	if Equals([]string{"1", "2"}, []string{"1"}) {
+	if Equal([]string{"1", "2"}, []string{"1"}) {
 		t.Fatal("should not equal")
+	}
+}
+
+func TestSubstract(t *testing.T) {
+	s := Substract([]string{"1", "2"}, []string{"1"})
+	if len(s) != 1 || s[0] != "2" {
+		t.Fatal("wrong substract")
+	}
+
+	s = Substract([]string{"1"}, []string{"1", "2"})
+	if len(s) != 0 {
+		t.Fatal("wrong substract")
 	}
 }
