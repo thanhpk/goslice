@@ -1,5 +1,9 @@
 package slice
 
+import (
+	"strings"
+)
+
 // Superset return true id a is superset of b
 func Superset(a []string, b []string) bool {
 	for _, i := range b {
@@ -77,4 +81,15 @@ func Find(slice []string, ele string) int {
 		}
 	}
 	return -1
+}
+
+func Trim(slice []string) []string {
+	newslice := make([]string, 0)
+	for _, s := range slice {
+		strim := strings.Trim(s, " ")
+		if strim != "" {
+			newslice = append(newslice, strim)
+		}
+	}
+	return newslice
 }
