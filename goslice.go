@@ -40,9 +40,9 @@ func ContainString(s []string, e string) bool {
 func Merge(s1 []string, s2 []string) []string {
 	ret := make([]string, len(s1))
 	copy(ret, s1)
-	for _, s := range s1 {
+	for _, s := range s2 {
 		found := false
-		for _, subs := range s2 {
+		for _, subs := range s1 {
 			if subs == s {
 				found = true
 				break
