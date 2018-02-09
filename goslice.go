@@ -86,7 +86,7 @@ func Find(slice []string, ele string) int {
 func Trim(slice []string) []string {
 	newslice := make([]string, 0)
 	for _, s := range slice {
-		strim := strings.Trim(s, " ")
+		strim := strings.TrimSpace(s)
 		if strim != "" {
 			newslice = append(newslice, strim)
 		}
